@@ -1,0 +1,86 @@
+package voxgigfitkitnutritionapi2sdk
+
+import (
+	"github.com/voxgig-sdk/fitkit-nutrition-api2-sdk/go/core"
+	"github.com/voxgig-sdk/fitkit-nutrition-api2-sdk/go/entity"
+	"github.com/voxgig-sdk/fitkit-nutrition-api2-sdk/go/feature"
+	_ "github.com/voxgig-sdk/fitkit-nutrition-api2-sdk/go/utility"
+)
+
+// Type aliases preserve external API.
+type FitkitNutritionApi2SDK = core.FitkitNutritionApi2SDK
+type Context = core.Context
+type Utility = core.Utility
+type Feature = core.Feature
+type Entity = core.Entity
+type FitkitNutritionApi2Entity = core.FitkitNutritionApi2Entity
+type StreamItem = core.StreamItem
+type FetcherFunc = core.FetcherFunc
+type Spec = core.Spec
+type Result = core.Result
+type Response = core.Response
+type Operation = core.Operation
+type Control = core.Control
+type FitkitNutritionApi2Error = core.FitkitNutritionApi2Error
+
+// BaseFeature from feature package.
+type BaseFeature = feature.BaseFeature
+
+func init() {
+	core.NewBaseFeatureFunc = func() core.Feature {
+		return feature.NewBaseFeature()
+	}
+	core.NewRatelimitFeatureFunc = func() core.Feature {
+		return feature.NewRatelimitFeature()
+	}
+	core.NewRetryFeatureFunc = func() core.Feature {
+		return feature.NewRetryFeature()
+	}
+	core.NewTestFeatureFunc = func() core.Feature {
+		return feature.NewTestFeature()
+	}
+	core.NewTimeoutFeatureFunc = func() core.Feature {
+		return feature.NewTimeoutFeature()
+	}
+	core.NewHealthzEntityFunc = func(client *core.FitkitNutritionApi2SDK, entopts map[string]any) core.FitkitNutritionApi2Entity {
+		return entity.NewHealthzEntity(client, entopts)
+	}
+	core.NewHomeGetEntityFunc = func(client *core.FitkitNutritionApi2SDK, entopts map[string]any) core.FitkitNutritionApi2Entity {
+		return entity.NewHomeGetEntity(client, entopts)
+	}
+	core.NewRobotEntityFunc = func(client *core.FitkitNutritionApi2SDK, entopts map[string]any) core.FitkitNutritionApi2Entity {
+		return entity.NewRobotEntity(client, entopts)
+	}
+	core.NewSitemapEntityFunc = func(client *core.FitkitNutritionApi2SDK, entopts map[string]any) core.FitkitNutritionApi2Entity {
+		return entity.NewSitemapEntity(client, entopts)
+	}
+	core.NewSitewebmanifestEntityFunc = func(client *core.FitkitNutritionApi2SDK, entopts map[string]any) core.FitkitNutritionApi2Entity {
+		return entity.NewSitewebmanifestEntity(client, entopts)
+	}
+	core.NewStaticAssetAssetGetEntityFunc = func(client *core.FitkitNutritionApi2SDK, entopts map[string]any) core.FitkitNutritionApi2Entity {
+		return entity.NewStaticAssetAssetGetEntity(client, entopts)
+	}
+}
+
+// Constructor re-exports.
+var NewFitkitNutritionApi2SDK = core.NewFitkitNutritionApi2SDK
+var TestSDK = core.TestSDK
+var NewContext = core.NewContext
+var NewSpec = core.NewSpec
+var NewResult = core.NewResult
+var NewResponse = core.NewResponse
+var NewOperation = core.NewOperation
+var MakeConfig = core.MakeConfig
+var SharedConfig = core.SharedConfig
+
+// No-arg convenience constructors. Go has no default-argument syntax,
+// so these aliases let callers write `sdk.New()` / `sdk.Test()`
+// instead of `sdk.NewFitkitNutritionApi2SDK(nil)` / `sdk.TestSDK(nil, nil)`
+// for the common no-options case.
+func New() *FitkitNutritionApi2SDK  { return NewFitkitNutritionApi2SDK(nil) }
+func Test() *FitkitNutritionApi2SDK { return TestSDK(nil, nil) }
+var NewBaseFeature = feature.NewBaseFeature
+var NewRatelimitFeature = feature.NewRatelimitFeature
+var NewRetryFeature = feature.NewRetryFeature
+var NewTestFeature = feature.NewTestFeature
+var NewTimeoutFeature = feature.NewTimeoutFeature
